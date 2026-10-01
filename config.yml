@@ -1,0 +1,303 @@
+# Runtime settings. GitHub requires the workflow cron/timeout to be literal YAML.
+max_ms: 5000
+elite_only: true
+concurrency: 1000
+max_judges: 8
+judge_validate_timeout: 8
+judge_concurrency: 150
+judge_max_rps: 50
+source_timeout: 30
+source_concurrency: 12
+max_source_bytes: 67108864
+max_judge_bytes: 262144
+progress_every: 10000
+nofile: 65536
+user_agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+real_ip_urls:
+  - https://api.ipify.org?format=json
+  - https://checkip.amazonaws.com/
+  - https://httpbingo.org/ip
+service_check:
+  enabled: true
+  limit: 3000
+  timeout: 10
+  concurrency: 300
+  max_bytes: 4194304
+checker_net:
+  enabled: true
+  days: 3
+  url: https://checker.net/v1/landing/archive
+publish:
+  # Empty means the repository default branch checked out by Actions.
+  branch: ''
+  # history: normal commit; snapshot: replace a SEPARATE branch with one data-only commit.
+  mode: history
+services:
+  - name: google
+    url: https://www.google.com/search?q=proxy+test&hl=en
+    blocked_url_markers: ['/sorry/']
+    captcha_markers: ['unusual traffic', 'recaptcha', '/sorry/index']
+    ok_markers: ['proxy test']
+  - name: cloudflare
+    url: https://www.cloudflare.com/
+    blocked_url_markers: []
+    captcha_markers: ['just a moment', 'cf-chl-', 'verify you are human']
+    ok_markers: ['cloudflare']
+  - name: amazon
+    url: https://www.amazon.com/
+    blocked_url_markers: ['/errors/validateCaptcha']
+    captcha_markers: ['robot check', 'enter the characters you see below']
+    ok_markers: ['amazon']
+  - name: reddit
+    url: https://www.reddit.com/
+    blocked_url_markers: []
+    captcha_markers: ['verify you are human', 'recaptcha']
+    ok_markers: ['reddit']
+  - name: instagram
+    url: https://www.instagram.com/
+    blocked_url_markers: ['/challenge/']
+    captcha_markers: ['verify you are human', 'recaptcha']
+    ok_markers: ['instagram']
+  - name: discord
+    url: https://discord.com/
+    blocked_url_markers: []
+    captcha_markers: ['verify you are human', 'just a moment']
+    ok_markers: ['discord']
+sources:
+  - https://roundproxies.com/api/get-free-proxies?limit=100&page=1&sort_by=lastChecked&sort_type=desc&speed=fast&anonymity=elite&uptime=high
+  - https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text&protocol=http&anonymity=elite&timeout=5000
+  - https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text&protocol=socks4&timeout=5000
+  - https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text&protocol=socks5&timeout=5000
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/all.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies.json
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/all/data.txt
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/all/data.json
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/http/data.txt
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/https/data.txt
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/socks4/data.txt
+  - https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/socks5/data.txt
+  - https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.txt
+  - https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt
+  - https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/https/data.txt
+  - https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt
+  - https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt
+  - https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/http.txt
+  - https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/https.txt
+  - https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/socks4.txt
+  - https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/socks5.txt
+  - https://raw.githubusercontent.com/zloi-user/hideip.me/main/http.txt
+  - https://raw.githubusercontent.com/zloi-user/hideip.me/main/https.txt
+  - https://raw.githubusercontent.com/zloi-user/hideip.me/main/connect.txt
+  - https://raw.githubusercontent.com/zloi-user/hideip.me/main/socks4.txt
+  - https://raw.githubusercontent.com/zloi-user/hideip.me/main/socks5.txt
+  - https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt
+  - https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/https.txt
+  - https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt
+  - https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt
+  - https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt
+  - https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS4_RAW.txt
+  - https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5_RAW.txt
+  - https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/generated/http_proxies.txt
+  - https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/generated/socks4_proxies.txt
+  - https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/generated/socks5_proxies.txt
+  - https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt
+  - https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
+  - https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt
+  - https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/socks4.txt
+  - https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/socks5.txt
+  - https://databay.com/free-proxy-list/http.txt
+  - https://databay.com/free-proxy-list/https.txt
+  - https://databay.com/free-proxy-list/socks4.txt
+  - https://databay.com/free-proxy-list/socks5.txt
+  - https://hproxy.com/api/proxy-list?format=txt&protocol=http
+  - https://hproxy.com/api/proxy-list?format=txt&protocol=https
+  - https://hproxy.com/api/proxy-list?format=txt&protocol=socks4
+  - https://hproxy.com/api/proxy-list?format=txt&protocol=socks5
+  - https://proxio.io/download?type=http&limit=500
+  - https://proxio.io/download?type=https&limit=500
+  - https://proxio.io/download?type=socks4&limit=500
+  - https://proxio.io/download?type=socks5&limit=500
+  - https://spys.me/proxy.txt
+  - https://spys.me/socks.txt
+  - https://raw.githubusercontent.com/proxio-io/proxy-list/main/http.txt
+  - https://raw.githubusercontent.com/proxio-io/proxy-list/main/https.txt
+  - https://raw.githubusercontent.com/proxio-io/proxy-list/main/socks4.txt
+  - https://raw.githubusercontent.com/proxio-io/proxy-list/main/socks5.txt
+  - https://raw.githubusercontent.com/relayglass/free-proxy-list/main/protocol/http/http.txt
+  - https://raw.githubusercontent.com/relayglass/free-proxy-list/main/protocol/https/https.txt
+  - https://raw.githubusercontent.com/relayglass/free-proxy-list/main/protocol/socks4/socks4.txt
+  - https://raw.githubusercontent.com/relayglass/free-proxy-list/main/protocol/socks5/socks5.txt
+  - https://geonode.com/free-proxy-list
+  - https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc
+  - https://spys.one/en/
+  - https://www.freeproxy.world/
+  - https://free-proxy-list.net/
+  - https://free-proxy-list.net/socks-proxy.html
+  - https://proxydb.net/
+  - https://topfreeproxylist.com/en/
+  - https://advanced.name/freeproxy
+  - https://hide.mn/en/proxy-list/
+  - https://hidemium.io/free-proxy/
+  - https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/http.txt
+  - https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks4.txt
+  - https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks5.txt
+  - https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/http.txt
+  - https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks4.txt
+  - https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt
+  - https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-http.txt
+  - https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
+  - https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks5.txt
+  - https://raw.githubusercontent.com/mmpx12/proxy-list/master/http.txt
+  - https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks4.txt
+  - https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt
+  - https://raw.githubusercontent.com/prxchk/proxy-list/main/http.txt
+  - https://raw.githubusercontent.com/prxchk/proxy-list/main/socks4.txt
+  - https://raw.githubusercontent.com/prxchk/proxy-list/main/socks5.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/http.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/socks4.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/socks5.txt
+  - https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_pretty.json
+  - https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt
+  - https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/http.txt
+  - https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/https.txt
+  - https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
+  - https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt
+judges:
+  - http://judge1.api.proxyscrape.com/
+  - http://judge2.api.proxyscrape.com/
+  - http://judge3.api.proxyscrape.com/
+  - http://judge4.api.proxyscrape.com/
+  - http://judge5.api.proxyscrape.com/
+  - https://proxyspace.pro/judge/check
+  - http://proxyjudge.us
+  - http://azenv.net
+  - https://www.wfuchs.de/azenv.php
+  - https://wfuchs.de/azenv.php
+  - http://www3.wind.ne.jp/hassii/env.cgi
+  - http://shinh.org/env.cgi
+  - http://www.mesregies.com/azz.php
+  - http://www.proxyjudge.biz/az.php
+  - http://www.scifi.pages.at/x-paradox/azenv.php
+  - http://www.massage-ltd.org.ua/azenv.php
+  - http://members.multimania.co.uk/redme/azenv.php
+  - http://members.multimania.nl/proxyworld31/azenv.php
+  - http://utenti.multimania.it/bingo/azenv.php
+  - http://mini-order.org/pxj/azenv.php
+  - http://www.bdsmpichunter.com/dde32.php
+  - http://www.pr0.net/deny/azenv.php
+  - http://www.messedupshit.com/judgeme/azenv.php
+  - https://www.messedupshit.com/judgeme/azenv.php
+  - http://pr0.net/deny2/azenv.php
+  - http://x103f.p4o.net
+  - http://0x103f.webuda.com/
+  - http://jiffgins.110mb.com/azenv.php
+  - http://laldaeq.110mb.com/exp/judge.php
+  - http://www.30tech.com/iptest.php
+  - http://www.cooleasy.com/azenv.php
+  - http://www.luisaranguren.com/azenv.php
+  - http://www.cyber-ta.org/releases/malware-analysis/public/2008-11-01-public/ARCHIVE/1225524306.chatter
+  - http://www.meow.org.uk/cgi-bin/env.pl
+  - http://urchin.earth.li/~twic/wml/wap-cgi-environment-variables.html
+  - http://www.dbasedeveloper.co.uk/mnuwer/dlearn/web/session03.htm
+  - http://www.proxyjudge.biz/cgi-bin/jenv.cgi
+  - http://www.shillout24.de/scripts/env.pl
+  - http://www1.ie.squid-cache.org/mail-archive/squid-users/200106/0197.html
+  - http://bhlms.fltr.ucl.ac.be/cfdocs/htmldocs/Expressions_8.html
+  - http://support.zeus.com/zws/media/docs/isapi/man/GetServerVariable.html
+  - http://www.shillout.de/scripts/env.pl
+  - http://hdrcp.de/cgi-bin/env.pl
+  - http://www.geomaticien.com/index.php?lang=en&NavTo=ordi/cgi/cgi_var&nR=nr_01
+  - http://www.outroom.de/scripts/env.pl
+  - http://zone.euweb.cz/prj.php
+  - http://goldenpirates.org/proxy/azenv.php
+  - http://bbec.it/cgi-bin/ev.pl
+  - http://www.dvdshop.it/cgi-bin/ev.pl
+  - http://anonymity.freeproxy.ru/check.php
+  - http://jagerman.com/env.cgi
+  - http://parsers.info/2009/04/proxyjudge-proverka-proksi-chto-zachem-i-kak/
+  - http://www.barryrudolph.com/cgi-bin/env.pl
+  - http://www.energoautomatika.ru/opg.php
+  - http://www.intuitive.com/coolsites/cgi/showenv.cgi
+  - http://www.pr0.net/judge/proxyjudge.php
+  - http://proxyjudge1.proxyfire.net/fastenv
+  - http://www.slapsnot.com/environment-variables.html
+  - http://nntime.com/proxy-faq.htm
+  - http://proxyjudge3.proxyfire.net/fastenv
+  - http://birdingonthe.net/cgi-bin/env.pl
+  - http://demo.nickname.net/demo/testpak/env.pl
+  - http://html.find-info.ru/html/010/ch11_01.html
+  - http://infohound.net/tools/env.pl
+  - http://scripts.mit.edu/%7Ejbarnold/demo/env.pl
+  - http://www.projectorsplus.ca/widgets/_vti_cnf/proxyjudge.php
+  - http://thunderstone.biz/site/vortexman/vhttpd_cgi_environment.html
+  - http://www.xav.com/env.pl
+  - http://www2.andrews.edu/~bidwell/examples/env.cgi
+  - http://docs.fusionlink.com/coldfusion/Expressions_8.html
+  - http://lists.osgeo.org/pipermail/mapserver-users/2008-February/054531.html
+  - http://www.cspy.org/proxyjudges
+  - http://www.dmfsys.com/support/wrdoc/doc/cgienv.html
+  - http://www.georgedillon.com/web/ssivar.shtml
+  - http://www.stilllistener.com/checkpoint1/ssi/
+  - http://markmail.biz/message/ho5k7mrb45edfv54?q=thread:ztjq2v2utly6qbum
+  - http://www.acting4you.com/env.cgi
+  - http://www.cmsoasis.com/env.cgi
+  - http://www.knowops.com/cgi-bin/textenv.pl
+  - http://heleneschneider.com/env.cgi
+  - http://www.cdr2.com/env.cgi
+  - http://www.cdrmail.com/env.cgi
+  - http://www.stilllistener.com/checkpoint1/
+  - http://www.stilllistener.com/checkpoint1/env/environmentchk.pl
+  - http://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-7785.html
+  - http://www.netoasis.net/env.cgi
+  - http://www2t.biglobe.ne.jp/~take52/test/env.cgi
+  - http://nofx2.oops.jp/cgi-bin/env/env.cgi
+  - http://cgi.www5a.biglobe.ne.jp/%7Ecafesp/env.cgi
+  - http://www.kandk.co.jp/html-memo/CGI/env.html
+  - http://www.ugtop.com/spill.shtml
+  - http://www2s.biglobe.ne.jp/%7Ecru/library/tools/cgi-bin/env.cgi
+  - http://www2s.biglobe.ne.jp/~cru/library/cgi/env.cgi
+  - http://www2t.biglobe.ne.jp/%7Etake52/test/env.cgi
+  - http://www41.tok2.com/home/spiritman/env.cgi
+  - http://www.taruo.net/e/?
+  - http://www2s.biglobe.ne.jp/~cru/library/tools/cgi-bin/env.cgi
+  - http://www.taruo.net/e/?l
+  - http://www2s.biglobe.ne.jp/%7Ecru/library/cgi/env.cgi
+  - http://www.object-craft.com.au/cgi-bin/alsamp/simple4/simple.py/main.html
+  - http://www.groomsfamily.com/perl/perlnut/ch09_04.htm
+  - http://www.proxyblind.org/proxy-anonymous-checker.shtml
+  - http://www.iptoinfo.com/proxyjudge.php
+  - http://eieweb.yz.yamagata-u.ac.jp/%7Etaruo/admin/envhm.html
+  - http://eieweb.yz.yamagata-u.ac.jp/~taruo/admin/envhm.html
+  - http://www16.tok2.com/home/aquemai/cgi-bin/prxjdg.cgi
+  - http://mcreate.net/cgi-bin/envchk/prxjdg.cgi?en
+  - http://mcreate.net/cgi-bin/envchk/prxjdg.cgi
+  - http://www.marcmarberg.goracer.de/cgi-bin/prxjdg.cgi?ja
+  - http://ocl.opoint.com/proxyjudge/prxjdg.cgi?
+  - http://195.139.39.24/proxyjudge/prxjdg.cgi?en
+  - http://ocl.opoint.com/proxyjudge/prxjdg.cgi
+  - http://ocl.opoint.com/proxyjudge/prxjdg.cgi?ja
+  - http://espacioforos.miarroba.com/1194797/prxjdg.cgi
+  - http://lilcutie440.tripod.com/id3.html
+  - http://www.lawina.com/cgi-bin/prxlaw_2.cgi
+  - http://www.stilllistener.addr.com/checkpoint1/test2/
+  - http://kojiki.server.ne.jp/etc/pj235.cgi?en
+  - http://kojiki.server.ne.jp/etc/pj235.cgi?ja
+  - http://takamers.s35.xrea.com/p_check.cgi
+  - http://takamers.s35.xrea.com/p_check.cgi?ja
+  - http://123.243.191.116/cgi-bin/prxjdg.cgi
+  - http://aranguren.co.cc/cgi-bin/prxjdg.cgi?en
+  - http://luisaranguren.com/cgi-bin/prxjdg.cgi
+  - http://pizzaman.darktech.org/cgi-bin/prxjdg.cgi?ja
+  - http://forum.weborum.com/lofiversion/index.php/t640.html
+  - http://httpheader.net/azenv.php
+  - https://cooleasy.com/azenv.php
+  - https://www.cknuckles.com/cgi/env.cgi
+  - http://www.suave.net/~dave/cgi/env.cgi
+  - http://pascal.hoez.free.fr/azenv.php
+  - http://httpbin.org/get
+  - https://httpbin.org/get
+  - http://httpbingo.org/get
+  - https://httpbingo.org/get
