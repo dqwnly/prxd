@@ -1,43 +1,43 @@
 {
   "candidates": {
-    "http": 157265,
-    "socks4": 486359,
-    "socks5": 501423
+    "http": 156378,
+    "socks4": 486694,
+    "socks5": 501064
   },
-  "checks": 1302312,
+  "checks": 1300514,
   "elite_only": true,
   "judges": [
     {
-      "direct_ms": 93.59451400000296,
+      "direct_ms": 55.19322899999679,
       "url": "http://httpbingo.org/get"
     },
     {
-      "direct_ms": 130.4011280000026,
+      "direct_ms": 65.50875899999653,
       "url": "https://httpbingo.org/get"
     },
     {
-      "direct_ms": 135.0095780000018,
+      "direct_ms": 87.25352100000094,
       "url": "http://www.knowops.com/cgi-bin/textenv.pl"
     },
     {
-      "direct_ms": 162.95950800000014,
-      "url": "http://judge3.api.proxyscrape.com/"
-    },
-    {
-      "direct_ms": 163.2681840000032,
+      "direct_ms": 129.47101800000382,
       "url": "http://httpbin.org/get"
     },
     {
-      "direct_ms": 183.4651499999964,
-      "url": "http://judge2.api.proxyscrape.com/"
+      "direct_ms": 165.80182099999874,
+      "url": "http://judge3.api.proxyscrape.com/"
     },
     {
-      "direct_ms": 196.50298500000218,
-      "url": "https://httpbin.org/get"
+      "direct_ms": 179.14715500000256,
+      "url": "http://judge5.api.proxyscrape.com/"
     },
     {
-      "direct_ms": 199.61069200000026,
+      "direct_ms": 180.48986399999833,
       "url": "http://judge4.api.proxyscrape.com/"
+    },
+    {
+      "direct_ms": 181.2072459999996,
+      "url": "http://httpheader.net/azenv.php"
     }
   ],
   "max_ms": 5000,
@@ -52,7 +52,7 @@
     },
     "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text&protocol=http&anonymity=elite&timeout=5000": {
       "counts": {
-        "http": 127,
+        "http": 90,
         "socks4": 0,
         "socks5": 0
       },
@@ -61,7 +61,7 @@
     "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=text&protocol=socks4&timeout=5000": {
       "counts": {
         "http": 0,
-        "socks4": 141,
+        "socks4": 134,
         "socks5": 0
       },
       "status": "ok"
@@ -70,24 +70,16 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 908
+        "socks5": 287
       },
       "status": "ok"
     },
     "https://checker.net/v1/landing/archive": {
       "dates": [
+        "2026-11-16",
         "2026-11-15",
-        "2026-11-14",
-        "2026-11-13"
+        "2026-11-14"
       ],
-      "status": "ok"
-    },
-    "https://checker.net/v1/landing/archive/2026-11-13": {
-      "counts": {
-        "http": 11576,
-        "socks4": 11576,
-        "socks5": 11576
-      },
       "status": "ok"
     },
     "https://checker.net/v1/landing/archive/2026-11-14": {
@@ -100,9 +92,17 @@
     },
     "https://checker.net/v1/landing/archive/2026-11-15": {
       "counts": {
-        "http": 10537,
-        "socks4": 10538,
-        "socks5": 10538
+        "http": 11014,
+        "socks4": 11014,
+        "socks5": 11014
+      },
+      "status": "ok"
+    },
+    "https://checker.net/v1/landing/archive/2026-11-16": {
+      "counts": {
+        "http": 3357,
+        "socks4": 3356,
+        "socks5": 3356
       },
       "status": "ok"
     },
@@ -140,9 +140,9 @@
     },
     "https://free-proxy-list.net/": {
       "counts": {
-        "http": 300,
-        "socks4": 300,
-        "socks5": 300
+        "http": 299,
+        "socks4": 299,
+        "socks5": 299
       },
       "status": "ok"
     },
@@ -180,7 +180,7 @@
     },
     "https://hproxy.com/api/proxy-list?format=txt&protocol=http": {
       "counts": {
-        "http": 2619,
+        "http": 2132,
         "socks4": 0,
         "socks5": 0
       },
@@ -188,7 +188,7 @@
     },
     "https://hproxy.com/api/proxy-list?format=txt&protocol=https": {
       "counts": {
-        "http": 2318,
+        "http": 1832,
         "socks4": 0,
         "socks5": 0
       },
@@ -197,7 +197,7 @@
     "https://hproxy.com/api/proxy-list?format=txt&protocol=socks4": {
       "counts": {
         "http": 0,
-        "socks4": 649,
+        "socks4": 590,
         "socks5": 0
       },
       "status": "ok"
@@ -206,7 +206,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 761
+        "socks5": 548
       },
       "status": "ok"
     },
@@ -220,7 +220,7 @@
     },
     "https://proxio.io/download?type=https&limit=500": {
       "counts": {
-        "http": 89,
+        "http": 86,
         "socks4": 0,
         "socks5": 0
       },
@@ -244,17 +244,17 @@
     },
     "https://proxydb.net/": {
       "counts": {
-        "http": 12,
-        "socks4": 12,
-        "socks5": 12
+        "http": 15,
+        "socks4": 15,
+        "socks5": 15
       },
       "status": "ok"
     },
     "https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc": {
       "counts": {
-        "http": 273,
-        "socks4": 76,
-        "socks5": 151
+        "http": 281,
+        "socks4": 67,
+        "socks5": 152
       },
       "status": "ok"
     },
@@ -348,7 +348,7 @@
     },
     "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt": {
       "counts": {
-        "http": 2390,
+        "http": 2400,
         "socks4": 0,
         "socks5": 0
       },
@@ -357,7 +357,7 @@
     "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt": {
       "counts": {
         "http": 0,
-        "socks4": 2263,
+        "socks4": 2311,
         "socks5": 0
       },
       "status": "ok"
@@ -366,7 +366,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 2283
+        "socks5": 2766
       },
       "status": "ok"
     },
@@ -380,7 +380,7 @@
     },
     "https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/http.txt": {
       "counts": {
-        "http": 511,
+        "http": 457,
         "socks4": 0,
         "socks5": 0
       },
@@ -388,7 +388,7 @@
     },
     "https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/https.txt": {
       "counts": {
-        "http": 53,
+        "http": 35,
         "socks4": 0,
         "socks5": 0
       },
@@ -397,7 +397,7 @@
     "https://raw.githubusercontent.com/iplocate/free-proxy-list/main/protocols/socks4.txt": {
       "counts": {
         "http": 0,
-        "socks4": 89,
+        "socks4": 101,
         "socks5": 0
       },
       "status": "ok"
@@ -406,7 +406,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 932
+        "socks5": 754
       },
       "status": "ok"
     },
@@ -460,23 +460,23 @@
     },
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies.json": {
       "counts": {
-        "http": 500,
-        "socks4": 369,
-        "socks5": 63
+        "http": 329,
+        "socks4": 331,
+        "socks5": 103
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/all.txt": {
       "counts": {
-        "http": 500,
-        "socks4": 369,
-        "socks5": 63
+        "http": 329,
+        "socks4": 331,
+        "socks5": 103
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt": {
       "counts": {
-        "http": 500,
+        "http": 329,
         "socks4": 0,
         "socks5": 0
       },
@@ -485,7 +485,7 @@
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt": {
       "counts": {
         "http": 0,
-        "socks4": 369,
+        "socks4": 331,
         "socks5": 0
       },
       "status": "ok"
@@ -494,7 +494,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 63
+        "socks5": 103
       },
       "status": "ok"
     },
@@ -512,23 +512,23 @@
     },
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_pretty.json": {
       "counts": {
-        "http": 500,
-        "socks4": 369,
-        "socks5": 63
+        "http": 329,
+        "socks4": 331,
+        "socks5": 103
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.txt": {
       "counts": {
-        "http": 5215,
-        "socks4": 350,
-        "socks5": 5399
+        "http": 5059,
+        "socks4": 439,
+        "socks5": 5415
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt": {
       "counts": {
-        "http": 4265,
+        "http": 4119,
         "socks4": 0,
         "socks5": 0
       },
@@ -536,7 +536,7 @@
     },
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/https/data.txt": {
       "counts": {
-        "http": 950,
+        "http": 940,
         "socks4": 0,
         "socks5": 0
       },
@@ -545,7 +545,7 @@
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt": {
       "counts": {
         "http": 0,
-        "socks4": 350,
+        "socks4": 439,
         "socks5": 0
       },
       "status": "ok"
@@ -554,7 +554,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 5399
+        "socks5": 5415
       },
       "status": "ok"
     },
@@ -592,23 +592,23 @@
     },
     "https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/all/data.json": {
       "counts": {
-        "http": 498,
-        "socks4": 190,
-        "socks5": 1746
+        "http": 644,
+        "socks4": 111,
+        "socks5": 1257
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/all/data.txt": {
       "counts": {
-        "http": 498,
-        "socks4": 190,
-        "socks5": 1746
+        "http": 644,
+        "socks4": 111,
+        "socks5": 1257
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/http/data.txt": {
       "counts": {
-        "http": 498,
+        "http": 644,
         "socks4": 0,
         "socks5": 0
       },
@@ -616,7 +616,7 @@
     },
     "https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/https/data.txt": {
       "counts": {
-        "http": 107,
+        "http": 119,
         "socks4": 0,
         "socks5": 0
       },
@@ -625,7 +625,7 @@
     "https://raw.githubusercontent.com/proxyscrape/free-proxy-list/main/proxies/protocols/socks4/data.txt": {
       "counts": {
         "http": 0,
-        "socks4": 190,
+        "socks4": 111,
         "socks5": 0
       },
       "status": "ok"
@@ -634,7 +634,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 1746
+        "socks5": 1567
       },
       "status": "ok"
     },
@@ -696,7 +696,7 @@
     },
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt": {
       "counts": {
-        "http": 103,
+        "http": 85,
         "socks4": 0,
         "socks5": 0
       },
@@ -720,7 +720,7 @@
     },
     "https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/generated/http_proxies.txt": {
       "counts": {
-        "http": 1328,
+        "http": 1182,
         "socks4": 0,
         "socks5": 0
       },
@@ -735,12 +735,8 @@
       "status": "ok"
     },
     "https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/generated/socks5_proxies.txt": {
-      "counts": {
-        "http": 0,
-        "socks4": 0,
-        "socks5": 0
-      },
-      "status": "ok"
+      "error": "HTTP 501",
+      "status": "error"
     },
     "https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/http.txt": {
       "counts": {
@@ -769,7 +765,7 @@
     "https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/socks4.txt": {
       "counts": {
         "http": 0,
-        "socks4": 481990,
+        "socks4": 483708,
         "socks5": 0
       },
       "status": "ok"
@@ -778,13 +774,13 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 497864
+        "socks5": 498669
       },
       "status": "ok"
     },
     "https://raw.githubusercontent.com/zloi-user/hideip.me/main/connect.txt": {
       "counts": {
-        "http": 1439,
+        "http": 1478,
         "socks4": 0,
         "socks5": 0
       },
@@ -792,7 +788,7 @@
     },
     "https://raw.githubusercontent.com/zloi-user/hideip.me/main/http.txt": {
       "counts": {
-        "http": 206,
+        "http": 172,
         "socks4": 0,
         "socks5": 0
       },
@@ -800,7 +796,7 @@
     },
     "https://raw.githubusercontent.com/zloi-user/hideip.me/main/https.txt": {
       "counts": {
-        "http": 976,
+        "http": 953,
         "socks4": 0,
         "socks5": 0
       },
@@ -809,7 +805,7 @@
     "https://raw.githubusercontent.com/zloi-user/hideip.me/main/socks4.txt": {
       "counts": {
         "http": 0,
-        "socks4": 119,
+        "socks4": 71,
         "socks5": 0
       },
       "status": "ok"
@@ -818,7 +814,7 @@
       "counts": {
         "http": 0,
         "socks4": 0,
-        "socks5": 270
+        "socks5": 105
       },
       "status": "ok"
     },
@@ -871,12 +867,12 @@
       "status": "ok"
     }
   },
-  "started_at": "2026-11-15T21:07:13.431456+00:00",
-  "timestamp": "2026-11-15T22:28:30.063550+00:00",
+  "started_at": "2026-11-16T06:50:38.609950+00:00",
+  "timestamp": "2026-11-16T08:08:59.084248+00:00",
   "working": {
-    "http": 357,
-    "https": 325,
-    "socks4": 347,
-    "socks5": 732
+    "http": 327,
+    "https": 0,
+    "socks4": 322,
+    "socks5": 670
   }
 }
